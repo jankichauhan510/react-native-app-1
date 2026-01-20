@@ -1,6 +1,7 @@
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { Stack } from "expo-router";
 import { Text, View } from "react-native";
+import ExtraText from "./ExtraText";
 
 export default function HomeScreen() {
   const colorScheme = useColorScheme(); // "dark" | "light"
@@ -27,6 +28,8 @@ export default function HomeScreen() {
         >
           Hello World
         </Text>
+
+        <ExtraText />
       </View>
     </>
   );
