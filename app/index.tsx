@@ -1,4 +1,4 @@
-import StylingDemo from "@/components/StylingInReactNative/StylingDemo";
+import TextInputDemo from "@/components/TextInputDemo/TextInputDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -37,7 +37,9 @@ export default function App() {
 
       {/* <PropsDemo name="Janki" /> */}
 
-      <StylingDemo />
+      {/* <StylingDemo /> */}
+
+      <TextInputDemo />
     </View>
   );
 }
