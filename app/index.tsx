@@ -1,4 +1,4 @@
-import TextInputDemo from "@/components/TextInputDemo/TextInputDemo";
+import FormDemo from "@/components/FormInReactNative/FormDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -39,7 +39,9 @@ export default function App() {
 
       {/* <StylingDemo /> */}
 
-      <TextInputDemo />
+      {/* <TextInputDemo /> */}
+
+      <FormDemo />
     </View>
   );
 }
