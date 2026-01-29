@@ -1,6 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
+// import LanguageItem from "./LanguageItem";
 
 const programmingLanguages = [
   { id: "1", name: "JavaScript" },
@@ -49,6 +50,24 @@ export default function FlatListDemo() {
         List with Flatlist Component
       </Text>
 
+      {/* renderItem with internal component */}
+      <FlatList
+        data={programmingLanguages}
+        renderItem={({ item }) => <LanguageItem name={item.name} />}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 40 }}
+      ></FlatList>
+      {/* 
+      <FlatList
+        data={programmingLanguages}
+        renderItem={({ item }) => <LanguageItem name={item.name} />}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 40 }}
+      ></FlatList> */}
+
+      {/* renderItem with inside
       <FlatList
         data={programmingLanguages}
         renderItem={({ item }) => (
@@ -65,7 +84,7 @@ export default function FlatListDemo() {
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 40 }}
-      ></FlatList>
+      ></FlatList> */}
     </View>
   );
 }
@@ -79,7 +98,7 @@ export default function FlatListDemo() {
 //       </View>
 //     )}
 
-const getIconName = (language: any) => {
+export const getIconName = (language: any) => {
   switch (language) {
     case "JavaScript":
       return "language-javascript";
@@ -132,3 +151,21 @@ const styles = StyleSheet.create({
     color: "#333",
   },
 });
+
+type LanguageItemProps = {
+  name: string;
+};
+
+const LanguageItem = ({ name }: LanguageItemProps) => {
+  return (
+    <View style={styles.itemContainer}>
+      <MaterialCommunityIcons
+        name={getIconName(name)}
+        size={26}
+        color="#4a90e2"
+        style={{ marginRight: 12 }}
+      />
+      <Text style={styles.itemText}>{name}</Text>
+    </View>
+  );
+};

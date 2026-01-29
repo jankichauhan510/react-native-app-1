@@ -1,4 +1,4 @@
-import GridDemo from "@/components/GridDemo/GridDemo";
+import FlatListDemo from "@/components/FlatListDemo/FlatListDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -43,11 +43,11 @@ export default function App() {
 
       {/* <FormDemo /> */}
 
-      {/* <FlatListDemo /> */}
+      <FlatListDemo />
 
       {/* <ListWithMap /> */}
 
-      <GridDemo />
+      {/* <GridDemo /> */}
     </View>
   );
 }
