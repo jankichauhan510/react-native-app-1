@@ -1,4 +1,4 @@
-import StateDemo from "@/components/StateDemo/StateDemo";
+import PropsDemo from "@/components/PropsDemo/PropsDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -33,7 +33,9 @@ export default function App() {
 
       {/* <ButtonComponent /> */}
 
-      <StateDemo />
+      {/* <StateDemo /> */}
+
+      <PropsDemo name="Janki" />
     </View>
   );
 }
