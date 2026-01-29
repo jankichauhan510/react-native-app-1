@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import ButtonComponent from "@/components/ButtonComponentDemo/ButtonComponent";
+import { View } from "react-native";
 
 const name = "Janki";
 const age = 22;
@@ -20,7 +21,7 @@ export default function App() {
         onPress={() => alert("Button Pressed")}
         color={"green"}
       ></Button> */}
-
+      {/* 
       <Text>Display a variable: {name}</Text>
       <Text>Display numbers: {age}</Text>
       <Text>Use expressions (calculations): {10 + 5}</Text>
@@ -28,7 +29,9 @@ export default function App() {
       <Text>
         Conditional text (ternary operator) :{" "}
         {isLoggedIn ? "Welcome back!" : "Please log in"}
-      </Text>
+      </Text> */}
+
+      <ButtonComponent />
     </View>
   );
 }
