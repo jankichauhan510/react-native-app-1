@@ -1,4 +1,4 @@
-import ButtonComponent from "@/components/ButtonComponentDemo/ButtonComponent";
+import StateDemo from "@/components/StateDemo/StateDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -31,7 +31,9 @@ export default function App() {
         {isLoggedIn ? "Welcome back!" : "Please log in"}
       </Text> */}
 
-      <ButtonComponent />
+      {/* <ButtonComponent /> */}
+
+      <StateDemo />
     </View>
   );
 }
