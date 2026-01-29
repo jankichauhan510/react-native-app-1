@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
@@ -52,6 +53,12 @@ export default function FlatListDemo() {
         data={programmingLanguages}
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
+            <MaterialCommunityIcons
+              name={getIconName(item.name)}
+              size={26}
+              color="#4a90e2"
+              style={{ marginRight: 12 }}
+            />
             <Text style={styles.itemText}>{item.name}</Text>
           </View>
         )}
@@ -72,20 +79,56 @@ export default function FlatListDemo() {
 //       </View>
 //     )}
 
+const getIconName = (language: any) => {
+  switch (language) {
+    case "JavaScript":
+      return "language-javascript";
+    case "Python":
+      return "language-python";
+    case "Java":
+      return "language-java";
+    case "C":
+      return "language-c";
+    case "C++":
+      return "language-cpp";
+    case "C#":
+      return "language-csharp";
+    case "TypeScript":
+      return "language-typescript";
+    case "Go":
+      return "language-go";
+    case "Kotlin":
+      return "language-kotlin";
+    case "Swift":
+      return "language-swift";
+    case "PHP":
+      return "language-php";
+    case "Ruby":
+      return "language-ruby";
+    case "Rust":
+      return "language-rust";
+
+    default:
+      return "code-tags";
+  }
+};
+
 const styles = StyleSheet.create({
   itemContainer: {
-    paddingVertical: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 14,
     paddingHorizontal: 16,
     marginHorizontal: 12,
     marginVertical: 6,
-    backgroundColor: "#ffffff",
-    borderRadius: 8,
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    elevation: 2,
   },
 
   itemText: {
     fontSize: 16,
-    color: "#333",
     fontWeight: "500",
-    letterSpacing: 0.5,
+    color: "#333",
   },
 });
