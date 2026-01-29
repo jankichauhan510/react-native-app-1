@@ -9,7 +9,15 @@ export default function App() {
         padding: 20,
       }}
     >
-      <Text>Hello World</Text>
+      <Text
+        style={{
+          fontSize: 20,
+          color: "blue",
+          fontWeight: "bold",
+        }}
+      >
+        Welcome to the React Native App
+      </Text>
     </View>
   );
 }
