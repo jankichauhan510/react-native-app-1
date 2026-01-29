@@ -1,17 +1,15 @@
-import ScreenWrapper from "@/components/ScreenWrapper";
-import { useColorScheme } from "@/hooks/use-color-scheme";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 
-export default function HomeScreen() {
-  const colorScheme = useColorScheme(); // "dark" | "light"
-
-  const textColor = colorScheme === "dark" ? "#FFFFFF" : "#000000";
-
+export default function App() {
   return (
-    <>
-      <ScreenWrapper>
-        <Text style={{ color: textColor }}>Hello Home</Text>
-      </ScreenWrapper>
-    </>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "#f0f0f0",
+        padding: 20,
+      }}
+    >
+      <Text>Hello World</Text>
+    </View>
   );
 }
