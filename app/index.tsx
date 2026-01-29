@@ -1,5 +1,8 @@
-import { Button, View } from "react-native";
-import TextComponent from "./TextComponentDemo/TextComponent";
+import { Text, View } from "react-native";
+
+const name = "Janki";
+const age = 22;
+const isLoggedIn = true;
 
 export default function App() {
   return (
@@ -10,13 +13,22 @@ export default function App() {
         padding: 20,
       }}
     >
-      <TextComponent />
+      {/* <TextComponent /> */}
 
-      <Button
+      {/* <Button
         title="Press ME"
         onPress={() => alert("Button Pressed")}
         color={"green"}
-      ></Button>
+      ></Button> */}
+
+      <Text>Display a variable: {name}</Text>
+      <Text>Display numbers: {age}</Text>
+      <Text>Use expressions (calculations): {10 + 5}</Text>
+      <Text>String concatenation: Hello, {name}!</Text>
+      <Text>
+        Conditional text (ternary operator) :{" "}
+        {isLoggedIn ? "Welcome back!" : "Please log in"}
+      </Text>
     </View>
   );
 }
