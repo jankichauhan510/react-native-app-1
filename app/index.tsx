@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Button, View } from "react-native";
 import TextComponent from "./TextComponentDemo/TextComponent";
 
 export default function App() {
@@ -11,6 +11,12 @@ export default function App() {
       }}
     >
       <TextComponent />
+
+      <Button
+        title="Press ME"
+        onPress={() => alert("Button Pressed")}
+        color={"green"}
+      ></Button>
     </View>
   );
 }
