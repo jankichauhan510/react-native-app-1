@@ -1,4 +1,4 @@
-import FlatListDemo from "@/components/FlatListDemo/FlatListDemo";
+import ListWithMap from "@/components/ListWithMap/ListWithMap";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -43,7 +43,9 @@ export default function App() {
 
       {/* <FormDemo /> */}
 
-      <FlatListDemo />
+      {/* <FlatListDemo /> */}
+
+      <ListWithMap />
     </View>
   );
 }
