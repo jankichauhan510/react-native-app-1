@@ -1,4 +1,4 @@
-import FormDemo from "@/components/FormInReactNative/FormDemo";
+import FlatListDemo from "@/components/FlatListDemo/FlatListDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -41,7 +41,9 @@ export default function App() {
 
       {/* <TextInputDemo /> */}
 
-      <FormDemo />
+      {/* <FormDemo /> */}
+
+      <FlatListDemo />
     </View>
   );
 }
