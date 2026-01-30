@@ -1,4 +1,4 @@
-import ResponsiveLayout from "@/components/ResponsiveLayout";
+import CustomButton from "@/components/CustomButton";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -55,7 +55,9 @@ export default function App() {
 
       {/* <ToggleComponent /> */}
 
-      <ResponsiveLayout />
+      {/* <ResponsiveLayout /> */}
+
+      <CustomButton />
     </View>
   );
 }
