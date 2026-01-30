@@ -1,4 +1,4 @@
-import PlatformDemo from "@/components/PlatformDemo";
+import ViewWebsiteinAPP from "@/components/ViewWebsiteinAPP";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -69,7 +69,9 @@ export default function App() {
 
       {/* <StatusBarDemo /> */}
 
-      <PlatformDemo />
+      {/* <PlatformDemo /> */}
+
+      <ViewWebsiteinAPP />
     </View>
   );
 }
