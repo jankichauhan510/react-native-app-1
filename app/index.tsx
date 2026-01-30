@@ -1,4 +1,4 @@
-import PressableDemo from "@/components/Pressable";
+import StatusBarDemo from "@/components/StatusBarDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -65,7 +65,9 @@ export default function App() {
 
       {/* <ModalDemo /> */}
 
-      <PressableDemo />
+      {/* <PressableDemo /> */}
+
+      <StatusBarDemo />
     </View>
   );
 }
