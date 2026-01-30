@@ -1,4 +1,4 @@
-import FlatListDemo from "@/components/FlatListDemo/FlatListDemo";
+import SectionListComponent from "@/components/SectionList.tsx/SectionList";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -43,11 +43,13 @@ export default function App() {
 
       {/* <FormDemo /> */}
 
-      <FlatListDemo />
+      {/* <FlatListDemo /> */}
 
       {/* <ListWithMap /> */}
 
       {/* <GridDemo /> */}
+
+      <SectionListComponent />
     </View>
   );
 }
