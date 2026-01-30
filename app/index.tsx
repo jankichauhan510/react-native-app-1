@@ -1,4 +1,4 @@
-import ActivityIndicatorComponent from "@/components/ActivityIndicator";
+import ModalDemo from "@/components/ModalDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -61,7 +61,9 @@ export default function App() {
 
       {/* <RadioButton /> */}
 
-      <ActivityIndicatorComponent />
+      {/* <ActivityIndicatorComponent /> */}
+
+      <ModalDemo />
     </View>
   );
 }
