@@ -1,4 +1,4 @@
-import ViewWebsiteinAPP from "@/components/ViewWebsiteinAPP";
+import CustomModalDemo from "@/components/CustomModalDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -71,7 +71,9 @@ export default function App() {
 
       {/* <PlatformDemo /> */}
 
-      <ViewWebsiteinAPP />
+      {/* <ViewWebsiteinAPP /> */}
+
+      <CustomModalDemo />
     </View>
   );
 }
