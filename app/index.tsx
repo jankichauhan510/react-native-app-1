@@ -1,4 +1,4 @@
-import SectionListComponent from "@/components/SectionList.tsx/SectionList";
+import ClasssComponent from "@/components/ClassComponentinRN/ClasssComponent";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -49,7 +49,9 @@ export default function App() {
 
       {/* <GridDemo /> */}
 
-      <SectionListComponent />
+      {/* <SectionListComponent /> */}
+
+      <ClasssComponent />
     </View>
   );
 }
