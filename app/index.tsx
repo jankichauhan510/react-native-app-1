@@ -1,4 +1,4 @@
-import StatusBarDemo from "@/components/StatusBarDemo";
+import PlatformDemo from "@/components/PlatformDemo";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -67,7 +67,9 @@ export default function App() {
 
       {/* <PressableDemo /> */}
 
-      <StatusBarDemo />
+      {/* <StatusBarDemo /> */}
+
+      <PlatformDemo />
     </View>
   );
 }
