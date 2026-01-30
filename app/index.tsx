@@ -1,4 +1,4 @@
-import ToggleComponent from "@/components/ToggleComponent";
+import ResponsiveLayout from "@/components/ResponsiveLayout";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -53,7 +53,9 @@ export default function App() {
 
       {/* <ClasssComponent /> */}
 
-      <ToggleComponent />
+      {/* <ToggleComponent /> */}
+
+      <ResponsiveLayout />
     </View>
   );
 }
