@@ -1,4 +1,4 @@
-import ClasssComponent from "@/components/ClassComponentinRN/ClasssComponent";
+import ToggleComponent from "@/components/ToggleComponent";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -51,7 +51,9 @@ export default function App() {
 
       {/* <SectionListComponent /> */}
 
-      <ClasssComponent />
+      {/* <ClasssComponent /> */}
+
+      <ToggleComponent />
     </View>
   );
 }
