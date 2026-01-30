@@ -1,4 +1,4 @@
-import CustomButton from "@/components/CustomButton";
+import RadioButton from "@/components/RadioButton";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -57,7 +57,9 @@ export default function App() {
 
       {/* <ResponsiveLayout /> */}
 
-      <CustomButton />
+      {/* <CustomButton /> */}
+
+      <RadioButton />
     </View>
   );
 }
