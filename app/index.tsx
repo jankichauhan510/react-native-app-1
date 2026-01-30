@@ -1,4 +1,4 @@
-import RadioButton from "@/components/RadioButton";
+import ActivityIndicatorComponent from "@/components/ActivityIndicator";
 import { View } from "react-native";
 
 const name = "Janki";
@@ -59,7 +59,9 @@ export default function App() {
 
       {/* <CustomButton /> */}
 
-      <RadioButton />
+      {/* <RadioButton /> */}
+
+      <ActivityIndicatorComponent />
     </View>
   );
 }
