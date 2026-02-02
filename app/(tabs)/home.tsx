@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function HomeScreen() {
+export default function HomeScreenofTabNavigation() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home Screen</Text>
