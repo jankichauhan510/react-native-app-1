@@ -16,7 +16,7 @@ export default function TextInputDemo() {
         onChangeText={(text) => setName(text)}
       ></TextInput>
 
-      <Text>You Entered: {name}</Text>
+      <Text style={{ color: "white" }}>You Entered: {name}</Text>
 
       <Button
         title="clear input"
