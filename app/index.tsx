@@ -68,15 +68,15 @@ export default function App() {
           <Text style={styles.buttonText}>📂 Drawer Navigation</Text>
         </Pressable>
 
-        {/* <Pressable
+        <Pressable
           style={({ pressed }) => [
             styles.button,
             pressed && styles.buttonPressed,
           ]}
-          onPress={() => router.push("/screens/tab-navigation-demo")}
+          onPress={() => router.push("/(tabs)/home")}
         >
           <Text style={styles.buttonText}>🧭 Tab Navigation</Text>
-        </Pressable> */}
+        </Pressable>
       </View>
     </SafeAreaView>
   );
