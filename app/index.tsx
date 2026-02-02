@@ -1,5 +1,5 @@
-import CustomModalDemo from "@/components/CustomModalDemo";
-import { View } from "react-native";
+import { router } from "expo-router";
+import { Button, Text, View } from "react-native";
 
 const name = "Janki";
 const age = 22;
@@ -73,7 +73,12 @@ export default function App() {
 
       {/* <ViewWebsiteinAPP /> */}
 
-      <CustomModalDemo />
+      {/* <CustomModalDemo /> */}
+
+      <View>
+        <Text>Home Screen</Text>
+        <Button title="Go to Details" onPress={() => router.push("/details")} />
+      </View>
     </View>
   );
 }
