@@ -37,7 +37,11 @@ export default function NavigationInRNDemo() {
     <ScrollView contentContainerStyle={{ padding: 40 }}>
       <View style={{ gap: 12 }}>
         {demos.map((item) => (
-          <Button title={item.title} onPress={() => router.push(item.path)} />
+          <Button
+            key={String(item.path)}
+            title={item.title}
+            onPress={() => router.push(item.path)}
+          />
         ))}
       </View>
     </ScrollView>
