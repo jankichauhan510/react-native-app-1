@@ -6,8 +6,8 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.buttonWrapper}>
         <Button
-          title="View Stack Navigation"
-          onPress={() => router.push("/screens/stack-demo")}
+          title="View Demo of Stack Navigation"
+          onPress={() => router.push("/screens/stack-navigation-demo")}
         />
       </View>
     </View>
