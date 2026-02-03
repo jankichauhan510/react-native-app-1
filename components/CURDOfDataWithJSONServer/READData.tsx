@@ -1,9 +1,12 @@
+import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
+  Alert,
   FlatList,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 
@@ -16,6 +19,25 @@ type Post = {
 export default function READData() {
   const [data, setData] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const handleEdit = (item: Post) => {
+    Alert.alert("Edit User", `Edit ${item.name}`);
+    // later → navigate to edit screen or open modal
+  };
+
+  const handleDelete = (id: number) => {
+    Alert.alert("Delete User", "Are you sure you want to delete this user?", [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Delete",
+        style: "destructive",
+        onPress: () => {
+          // API delete call later
+          console.log("Deleted user id:", id);
+        },
+      },
+    ]);
+  };
 
   const getAPIData = async () => {
     try {
@@ -47,6 +69,20 @@ export default function READData() {
       <View style={styles.info}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.email}>{item.email}</Text>
+      </View>
+
+      {/* Action Icons */}
+      <View style={styles.actions}>
+        <TouchableOpacity onPress={() => handleEdit(item)}>
+          <Ionicons name="create-outline" size={22} color="#2563eb" />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => handleDelete(item.id)}
+          style={{ marginLeft: 12 }}
+        >
+          <Ionicons name="trash-outline" size={22} color="#dc2626" />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -84,6 +120,10 @@ const styles = StyleSheet.create({
     padding: 14,
     borderRadius: 12,
     elevation: 2,
+  },
+  actions: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 
   avatar: {
