@@ -1,11 +1,11 @@
-import { router } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import RefINReactNative from "@/components/RefInReactNative/RefINReactNative";
+import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.card}>
+      {/* <View style={styles.card}>
         <Pressable
           style={({ pressed }) => [
             styles.button,
@@ -37,7 +37,9 @@ export default function App() {
         >
           <Text style={styles.buttonText}>CRUD with JSON-server</Text>
         </Pressable>
-      </View>
+      </View> */}
+
+      <RefINReactNative />
     </SafeAreaView>
   );
 }
