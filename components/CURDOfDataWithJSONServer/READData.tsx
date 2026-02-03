@@ -100,6 +100,7 @@ export default function READData({ refreshKey }: { refreshKey: number }) {
             // ✅ Update UI after delete
             const filteredData = data.filter((u) => u.id !== id);
             setData(filteredData);
+            setFilteredData(filteredData);
           } catch (error) {
             console.error("Delete error:", error);
             Alert.alert("Error", "Failed to delete user");
