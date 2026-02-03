@@ -7,7 +7,11 @@ import {
   View,
 } from "react-native";
 
-export default function AddData() {
+type AddDataProps = {
+  onSuccess: () => void;
+};
+
+export default function AddData({ onSuccess }: AddDataProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
@@ -37,7 +41,6 @@ export default function AddData() {
     if (!validate()) return;
 
     const data = { name, email };
-
     const url = "http://10.17.167.128:3000/users";
 
     try {
@@ -50,11 +53,16 @@ export default function AddData() {
       });
 
       const response = await result.json();
+
       if (response) {
         alert("✅ Data saved successfully");
+
         setName("");
         setEmail("");
         setErrors({});
+
+        // 👈 GO BACK TO READ COMPONENT
+        onSuccess();
       }
     } catch (error) {
       console.error("Error saving data:", error);
