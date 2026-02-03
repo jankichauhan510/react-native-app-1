@@ -2,18 +2,23 @@ import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function App() {
+export default function NavigationDemos() {
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.heading}>Navigation Demos</Text>
+      <Text style={styles.subHeading}>
+        Explore different navigation types in React Native
+      </Text>
+
       <View style={styles.card}>
         <Pressable
           style={({ pressed }) => [
             styles.button,
             pressed && styles.buttonPressed,
           ]}
-          onPress={() => router.push("/screens/navigation-demos")}
+          onPress={() => router.push("/screens/stack-navigation-demo")}
         >
-          <Text style={styles.buttonText}>View Navigation Demo</Text>
+          <Text style={styles.buttonText}>📚 Stack Navigation</Text>
         </Pressable>
 
         <Pressable
@@ -21,9 +26,19 @@ export default function App() {
             styles.button,
             pressed && styles.buttonPressed,
           ]}
-          onPress={() => router.push("/screens/fetch-data")}
+          onPress={() => router.push("/(drawer)/inbox")}
         >
-          <Text style={styles.buttonText}>Fetch Single post data</Text>
+          <Text style={styles.buttonText}>📂 Drawer Navigation</Text>
+        </Pressable>
+
+        <Pressable
+          style={({ pressed }) => [
+            styles.button,
+            pressed && styles.buttonPressed,
+          ]}
+          onPress={() => router.push("/(tabs)/home")}
+        >
+          <Text style={styles.buttonText}>🧭 Tab Navigation</Text>
         </Pressable>
       </View>
     </SafeAreaView>

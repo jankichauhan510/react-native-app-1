@@ -55,6 +55,16 @@ export default function ScreensLayout() {
         name="custom-modal-demo"
         options={{ title: "Custom Modal Demo" }}
       />
+
+      <Stack.Screen
+        name="navigation-demos"
+        options={{ title: "View different types of naviagtion" }}
+      />
+
+      <Stack.Screen
+        name="fetch-data"
+        options={{ title: "Fetch Single data and Display" }}
+      />
     </Stack>
   );
 }
