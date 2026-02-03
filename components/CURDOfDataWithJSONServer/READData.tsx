@@ -70,6 +70,7 @@ export default function READData({ refreshKey }: { refreshKey: number }) {
       );
 
       setData(updatedList);
+      setFilteredData(updatedList);
       alert("✅ Data updated successfully");
       setEditVisible(false);
     } catch (error) {
