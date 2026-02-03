@@ -18,7 +18,7 @@ type Post = {
   email: string;
 };
 
-export default function READData() {
+export default function READData({ refreshKey }: { refreshKey: number }) {
   const [data, setData] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -145,7 +145,7 @@ export default function READData() {
 
   useEffect(() => {
     getAPIData();
-  }, []);
+  }, [refreshKey]);
 
   const renderItem = ({ item }: { item: Post }) => (
     <View style={styles.row}>

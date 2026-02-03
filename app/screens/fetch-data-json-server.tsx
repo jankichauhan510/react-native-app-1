@@ -1,6 +1,6 @@
-import CURDDataJSONServer from "@/components/CURDOfDataWithJSONServer/CURDDataJSONServer";
+import CRUDWithJsonServer from "@/components/CURDOfDataWithJSONServer/CRUDWithJsonServer";
 import React from "react";
 
 export default function FetchDataJSONServer() {
-  return <CURDDataJSONServer />;
+  return <CRUDWithJsonServer />;
 }
