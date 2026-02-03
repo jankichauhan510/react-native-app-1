@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 type Post = {
-  id: number;
+  id: string;
   name: string;
   email: string;
 };

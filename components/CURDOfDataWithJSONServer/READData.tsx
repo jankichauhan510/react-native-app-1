@@ -12,7 +12,7 @@ import {
 import EditUserModal from "./EditUserModal";
 
 type Post = {
-  id: number;
+  id: string;
   name: string;
   email: string;
 };
@@ -33,18 +33,48 @@ export default function READData() {
     setEditVisible(true);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!selectedUser) return;
 
-    const updatedList = data.map((u) =>
-      u.id === selectedUser.id ? { ...u, name: editName, email: editEmail } : u,
-    );
+    const updatedUser = {
+      id: selectedUser.id,
+      name: editName,
+      email: editEmail,
+    };
 
-    setData(updatedList);
-    setEditVisible(false);
+    try {
+      const res = await fetch(
+        `http://10.17.167.128:3000/users/${selectedUser.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedUser),
+        },
+      );
+
+      if (!res.ok) {
+        throw new Error("Failed to update user");
+      }
+
+      const updatedFromServer = await res.json();
+
+      // ✅ FIX IS HERE
+      const updatedList = data.map((u) =>
+        u.id === selectedUser.id ? updatedFromServer : u,
+      );
+
+      setData(updatedList);
+      alert("✅ Data updated successfully");
+      setEditVisible(false);
+    } catch (error) {
+      console.error("Update error:", error);
+      Alert.alert("Error", "Failed to update user");
+    }
   };
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     Alert.alert("Delete User", "Are you sure you want to delete this user?", [
       { text: "Cancel", style: "cancel" },
       {
