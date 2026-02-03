@@ -63,7 +63,7 @@ export default function ScreensLayout() {
 
       <Stack.Screen
         name="fetch-data"
-        options={{ title: "Fetch Single data and Display" }}
+        options={{ title: "Display API data with flatlist" }}
       />
     </Stack>
   );

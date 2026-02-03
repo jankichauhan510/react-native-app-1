@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  ScrollView,
+  FlatList,
   StyleSheet,
   Text,
   View,
@@ -34,6 +34,16 @@ export default function FetchDataCComponent() {
     getAPIData();
   }, []);
 
+  const renderItem = ({ item }: { item: Post }) => (
+    <View style={styles.card}>
+      <Text style={styles.label}>Title</Text>
+      <Text style={styles.title}>{item.title}</Text>
+
+      <Text style={styles.label}>Body</Text>
+      <Text style={styles.body}>{item.body}</Text>
+    </View>
+  );
+
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
@@ -43,17 +53,24 @@ export default function FetchDataCComponent() {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      {data.map((item) => (
-        <View key={item.id} style={styles.card}>
-          {/* <Text style={styles.label}>Title</Text> */}
-          <Text style={styles.title}>{item.title}</Text>
+    // <ScrollView style={styles.container}>
+    //   {data.map((item) => (
+    //     <View key={item.id} style={styles.card}>
+    //       <Text style={styles.label}>Title</Text>
+    //       <Text style={styles.title}>{item.title}</Text>
 
-          {/* <Text style={styles.label}>Body</Text> */}
-          <Text style={styles.body}>{item.body}</Text>
-        </View>
-      ))}
-    </ScrollView>
+    //       <Text style={styles.label}>Body</Text>
+    //       <Text style={styles.body}>{item.body}</Text>
+    //     </View>
+    //   ))}
+    // </ScrollView>
+
+    <FlatList
+      data={data}
+      renderItem={renderItem}
+      keyExtractor={(item) => item.id.toString()}
+      contentContainerStyle={styles.container}
+    />
   );
 }
 
