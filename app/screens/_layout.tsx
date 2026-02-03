@@ -65,6 +65,11 @@ export default function ScreensLayout() {
         name="fetch-data"
         options={{ title: "Display API data with flatlist" }}
       />
+
+      <Stack.Screen
+        name="fetch-data-json-server"
+        options={{ title: "Data with the JSON server" }}
+      />
     </Stack>
   );
 }

@@ -23,7 +23,19 @@ export default function App() {
           ]}
           onPress={() => router.push("/screens/fetch-data")}
         >
-          <Text style={styles.buttonText}>Fetch Multiple posts data</Text>
+          <Text style={styles.buttonText}>
+            Fetch Multiple posts data from dummy data
+          </Text>
+        </Pressable>
+
+        <Pressable
+          style={({ pressed }) => [
+            styles.button,
+            pressed && styles.buttonPressed,
+          ]}
+          onPress={() => router.push("/screens/fetch-data-json-server")}
+        >
+          <Text style={styles.buttonText}>Fetch data from the JSON-server</Text>
         </Pressable>
       </View>
     </SafeAreaView>
