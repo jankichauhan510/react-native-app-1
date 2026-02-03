@@ -33,7 +33,7 @@ export default function READData() {
     setEditVisible(true);
   };
 
-  const handleSave = async () => {
+  const handleUpdateData = async () => {
     if (!selectedUser) return;
 
     const updatedUser = {
@@ -80,9 +80,25 @@ export default function READData() {
       {
         text: "Delete",
         style: "destructive",
-        onPress: () => {
-          // API delete call later
-          console.log("Deleted user id:", id);
+        onPress: async () => {
+          try {
+            const res = await fetch(`http://10.17.167.128:3000/users/${id}`, {
+              method: "DELETE",
+            });
+
+            if (!res.ok) {
+              throw new Error("Failed to delete user");
+            }
+
+            alert("✅ Data deleted successfully");
+
+            // ✅ Update UI after delete
+            const filteredData = data.filter((u) => u.id !== id);
+            setData(filteredData);
+          } catch (error) {
+            console.error("Delete error:", error);
+            Alert.alert("Error", "Failed to delete user");
+          }
         },
       },
     ]);
@@ -160,7 +176,7 @@ export default function READData() {
         onChangeName={setEditName}
         onChangeEmail={setEditEmail}
         onClose={() => setEditVisible(false)}
-        onSave={handleSave}
+        onSave={handleUpdateData}
       />
     </>
   );
