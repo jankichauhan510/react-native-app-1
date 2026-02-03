@@ -35,7 +35,7 @@ export default function App() {
           ]}
           onPress={() => router.push("/screens/fetch-data-json-server")}
         >
-          <Text style={styles.buttonText}>Fetch data from the JSON-server</Text>
+          <Text style={styles.buttonText}>CRUD with JSON-server</Text>
         </Pressable>
       </View>
     </SafeAreaView>

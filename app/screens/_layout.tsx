@@ -68,7 +68,7 @@ export default function ScreensLayout() {
 
       <Stack.Screen
         name="fetch-data-json-server"
-        options={{ title: "Data with the JSON server" }}
+        options={{ title: "CRUD with JSON server" }}
       />
     </Stack>
   );
