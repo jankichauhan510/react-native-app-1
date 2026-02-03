@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import EditUserModal from "./EditUserModal";
 
 type Post = {
   id: number;
@@ -20,9 +21,27 @@ export default function READData() {
   const [data, setData] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const [editVisible, setEditVisible] = useState(false);
+  const [selectedUser, setSelectedUser] = useState<Post | null>(null);
+  const [editName, setEditName] = useState("");
+  const [editEmail, setEditEmail] = useState("");
+
   const handleEdit = (item: Post) => {
-    Alert.alert("Edit User", `Edit ${item.name}`);
-    // later → navigate to edit screen or open modal
+    setSelectedUser(item);
+    setEditName(item.name);
+    setEditEmail(item.email);
+    setEditVisible(true);
+  };
+
+  const handleSave = () => {
+    if (!selectedUser) return;
+
+    const updatedList = data.map((u) =>
+      u.id === selectedUser.id ? { ...u, name: editName, email: editEmail } : u,
+    );
+
+    setData(updatedList);
+    setEditVisible(false);
   };
 
   const handleDelete = (id: number) => {
@@ -96,12 +115,24 @@ export default function READData() {
   }
 
   return (
-    <FlatList
-      data={data}
-      renderItem={renderItem}
-      keyExtractor={(item) => item.id.toString()}
-      contentContainerStyle={styles.container}
-    />
+    <>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        contentContainerStyle={styles.container}
+      />
+      <EditUserModal
+        visible={editVisible}
+        user={selectedUser}
+        name={editName}
+        email={editEmail}
+        onChangeName={setEditName}
+        onChangeEmail={setEditEmail}
+        onClose={() => setEditVisible(false)}
+        onSave={handleSave}
+      />
+    </>
   );
 }
 
