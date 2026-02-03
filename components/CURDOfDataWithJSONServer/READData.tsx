@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {
-    ActivityIndicator,
-    FlatList,
-    StyleSheet,
-    Text,
-    View,
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
 
 type Post = {
@@ -35,12 +35,19 @@ export default function READData() {
   }, []);
 
   const renderItem = ({ item }: { item: Post }) => (
-    <View style={styles.card}>
-      <Text style={styles.label}>Name:</Text>
-      <Text style={styles.title}>{item.name}</Text>
+    <View style={styles.row}>
+      {/* Avatar */}
+      <View style={styles.avatar}>
+        <Text style={styles.avatarText}>
+          {item.name.charAt(0).toUpperCase()}
+        </Text>
+      </View>
 
-      <Text style={styles.label}>Email:</Text>
-      <Text style={styles.body}>{item.email}</Text>
+      {/* User Info */}
+      <View style={styles.info}>
+        <Text style={styles.name}>{item.name}</Text>
+        <Text style={styles.email}>{item.email}</Text>
+      </View>
     </View>
   );
 
@@ -64,42 +71,57 @@ export default function READData() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#f3f4f6",
-    padding: 16,
+    backgroundColor: "#f9fafb",
+    paddingVertical: 8,
   },
-  card: {
-    backgroundColor: "#ffffff",
+
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    marginHorizontal: 16,
+    marginVertical: 6,
+    padding: 14,
     borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    elevation: 2,
   },
-  label: {
-    fontSize: 12,
-    fontWeight: "600",
-    color: "#6b7280",
-    marginTop: 8,
-    marginBottom: 4,
-    textTransform: "uppercase",
+
+  avatar: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: "#4f46e5",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  title: {
-    fontSize: 18,
+
+  avatarText: {
+    color: "#fff",
+    fontSize: 20,
     fontWeight: "700",
+  },
+
+  info: {
+    marginLeft: 12,
+    flex: 1,
+  },
+
+  name: {
+    fontSize: 16,
+    fontWeight: "600",
     color: "#111827",
   },
-  body: {
+
+  email: {
     fontSize: 14,
-    lineHeight: 20,
-    color: "#374151",
+    color: "#6b7280",
+    marginTop: 2,
   },
+
   loadingContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f3f4f6",
+    backgroundColor: "#f9fafb",
   },
 });
