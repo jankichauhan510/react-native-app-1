@@ -4,7 +4,7 @@ import { Button, Text, View } from "react-native";
 export default function Details() {
   return (
     <View>
-      <Text>Detail Screen</Text>
+      <Text>Details Screen</Text>
       <Button title="Go Back" onPress={() => router.back()} />
     </View>
   );
