@@ -6,6 +6,7 @@ import {
   FlatList,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -25,6 +26,9 @@ export default function READData() {
   const [selectedUser, setSelectedUser] = useState<Post | null>(null);
   const [editName, setEditName] = useState("");
   const [editEmail, setEditEmail] = useState("");
+
+  const [searchText, setSearchText] = useState("");
+  const [filteredData, setFilteredData] = useState<Post[]>([]);
 
   const handleEdit = (item: Post) => {
     setSelectedUser(item);
@@ -109,12 +113,34 @@ export default function READData() {
       const url = "http://10.17.167.128:3000/users";
       const res = await fetch(url);
       const result = await res.json();
+
       setData(result);
+      setFilteredData(result); // 👈 important
     } catch (error) {
       console.error("Error fetching API data:", error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleSearch = (text: string) => {
+    setSearchText(text);
+
+    if (!text.trim()) {
+      setFilteredData(data);
+      return;
+    }
+
+    const lowerText = text.toLowerCase();
+
+    const filtered = data.filter(
+      (item) =>
+        item.name.toLowerCase().includes(lowerText) ||
+        item.email.toLowerCase().includes(lowerText) ||
+        item.id.toString().includes(lowerText),
+    );
+
+    setFilteredData(filtered);
   };
 
   useEffect(() => {
@@ -162,8 +188,19 @@ export default function READData() {
 
   return (
     <>
+      <View style={styles.searchBox}>
+        <Ionicons name="search-outline" size={20} color="#6b7280" />
+        <TextInput
+          placeholder="Search by name, email "
+          value={searchText}
+          onChangeText={handleSearch}
+          style={styles.searchInput}
+          placeholderTextColor="#9ca3af"
+        />
+      </View>
+
       <FlatList
-        data={data}
+        data={filteredData}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={styles.container}
@@ -240,5 +277,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#f9fafb",
+  },
+
+  searchBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    margin: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderRadius: 12,
+    elevation: 2,
+  },
+
+  searchInput: {
+    flex: 1,
+    marginLeft: 8,
+    fontSize: 16,
+    color: "#111827",
   },
 });
