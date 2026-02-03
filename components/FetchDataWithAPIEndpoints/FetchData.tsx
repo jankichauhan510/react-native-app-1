@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+
+type Post = {
+  id: number;
+  title: string;
+  body: string;
+};
 
 export default function FetchDataCComponent() {
-  const [data, setData] = useState<{
-    title: string;
-    body: string;
-  } | null>(null);
+  const [data, setData] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const getAPIData = async () => {
     try {
-      const url = "https://jsonplaceholder.typicode.com/posts/1";
+      const url = "https://jsonplaceholder.typicode.com/posts";
       const res = await fetch(url);
-      const data = await res.json();
-      setData(data);
+      const result = await res.json();
+      setData(result);
     } catch (error) {
       console.error("Error fetching API data:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -22,45 +34,51 @@ export default function FetchDataCComponent() {
     getAPIData();
   }, []);
 
-  return (
-    <View style={styles.container}>
-      {data ? (
-        <View style={styles.card}>
-          <Text style={styles.label}>Title</Text>
-          <Text style={styles.title}>{data.title}</Text>
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#4f46e5" />
+      </View>
+    );
+  }
 
-          <Text style={styles.label}>Body</Text>
-          <Text style={styles.body}>{data.body}</Text>
+  return (
+    <ScrollView style={styles.container}>
+      {data.map((item) => (
+        <View key={item.id} style={styles.card}>
+          {/* <Text style={styles.label}>Title</Text> */}
+          <Text style={styles.title}>{item.title}</Text>
+
+          {/* <Text style={styles.label}>Body</Text> */}
+          <Text style={styles.body}>{item.body}</Text>
         </View>
-      ) : (
-        <Text style={styles.loading}>Loading data...</Text>
-      )}
-    </View>
+      ))}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f3f4f6", // light gray background
-    justifyContent: "center",
+    backgroundColor: "#f3f4f6",
     padding: 16,
   },
   card: {
     backgroundColor: "#ffffff",
     borderRadius: 12,
     padding: 16,
+    marginBottom: 12,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    elevation: 3, // Android shadow
+    elevation: 3,
   },
   label: {
     fontSize: 12,
     fontWeight: "600",
-    color: "#6b7280", // gray
-    marginTop: 12,
+    color: "#6b7280",
+    marginTop: 8,
     marginBottom: 4,
     textTransform: "uppercase",
   },
@@ -74,9 +92,10 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: "#374151",
   },
-  loading: {
-    textAlign: "center",
-    fontSize: 16,
-    color: "#6b7280",
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f3f4f6",
   },
 });

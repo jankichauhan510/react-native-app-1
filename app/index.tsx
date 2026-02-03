@@ -23,7 +23,7 @@ export default function App() {
           ]}
           onPress={() => router.push("/screens/fetch-data")}
         >
-          <Text style={styles.buttonText}>Fetch Single post data</Text>
+          <Text style={styles.buttonText}>Fetch Multiple posts data</Text>
         </Pressable>
       </View>
     </SafeAreaView>
