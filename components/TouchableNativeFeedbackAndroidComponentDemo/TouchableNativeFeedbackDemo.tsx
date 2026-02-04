@@ -33,7 +33,7 @@ export default function TouchableNativeFeedbackDemo() {
       <Animated.View
         style={[styles.button, { transform: [{ scale: scaleAnim }] }]}
       >
-        <Text style={styles.text}>Press Me</Text>
+        <Text style={styles.text}>TouchableNativeFeedback Demo</Text>
       </Animated.View>
     </TouchableNativeFeedback>
   );
