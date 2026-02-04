@@ -1,4 +1,4 @@
-import KeyboardAvoidingComponent from "@/components/KeyboardAvoidingComponentDemo/KeyboardAvoidingComponent";
+import RefreshControlDemo from "@/components/RefreshControlDemo/RefreshControlDemo";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -45,7 +45,9 @@ export default function App() {
 
       {/* <ImageBackgroundDemo /> */}
 
-      <KeyboardAvoidingComponent />
+      {/* <KeyboardAvoidingComponent /> */}
+
+      <RefreshControlDemo />
     </SafeAreaView>
   );
 }
