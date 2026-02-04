@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import APIsDemoComponent from "./APIsDemoComponent";
 
 export default function APIsDemo() {
   return (
@@ -9,6 +10,7 @@ export default function APIsDemo() {
         React Native APIs are built-in tools for using mobile features in your
         app
       </Text>
+      <APIsDemoComponent />
     </View>
   );
 }
