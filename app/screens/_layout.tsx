@@ -1,8 +1,37 @@
 import { Stack } from "expo-router";
 
+// const commonHeaderOptions: NativeStackNavigationOptions = {
+//   headerStyle: {
+//     backgroundColor: "#1e293b",
+//   },
+//   headerTintColor: "#ffffff",
+//   headerTitleStyle: {
+//     fontSize: 18,
+//     fontWeight: "600",
+//   },
+//   headerTitleAlign: "center",
+// };
+
 export default function ScreensLayout() {
   return (
     <Stack>
+      <Stack.Screen
+        name="navigation-demos"
+        options={{
+          title: "View different types of navigation",
+        }}
+      />
+
+      <Stack.Screen
+        name="fetch-data"
+        options={{ title: "Display API data with flatlist" }}
+      />
+
+      <Stack.Screen
+        name="fetch-data-json-server"
+        options={{ title: "CRUD with JSON server" }}
+      />
+
       <Stack.Screen name="button-demo" options={{ title: "Button Demo" }} />
       <Stack.Screen name="state-demo" options={{ title: "State Demo" }} />
       <Stack.Screen name="props-demo" options={{ title: "Props Demo" }} />
@@ -57,18 +86,52 @@ export default function ScreensLayout() {
       />
 
       <Stack.Screen
-        name="navigation-demos"
-        options={{ title: "View different types of naviagtion" }}
+        name="drawer-layout-android"
+        options={{ title: "Drawer Layout Android" }}
       />
 
       <Stack.Screen
-        name="fetch-data"
-        options={{ title: "Display API data with flatlist" }}
+        name="image-background"
+        options={{ title: "Image Background" }}
       />
 
       <Stack.Screen
-        name="fetch-data-json-server"
-        options={{ title: "CRUD with JSON server" }}
+        name="image-component"
+        options={{ title: "Image Component" }}
+      />
+
+      <Stack.Screen
+        name="keyboard-avoiding"
+        options={{ title: "Keyboard Avoiding View" }}
+      />
+
+      <Stack.Screen
+        name="ref-in-react-native"
+        options={{ title: "Ref in React Native" }}
+      />
+
+      <Stack.Screen
+        name="refresh-control"
+        options={{ title: "Refresh Control" }}
+      />
+
+      <Stack.Screen name="scroll-view" options={{ title: "ScrollView" }} />
+
+      <Stack.Screen name="switch-scree" options={{ title: "Switch" }} />
+
+      <Stack.Screen
+        name="touchable-native-feedback-demo"
+        options={{ title: "Touchable Native Feedback" }}
+      />
+
+      <Stack.Screen
+        name="touchable-without-feedback"
+        options={{ title: "Touchable Without Feedback" }}
+      />
+
+      <Stack.Screen
+        name="virtualized-list"
+        options={{ title: "Virtualized List" }}
       />
     </Stack>
   );

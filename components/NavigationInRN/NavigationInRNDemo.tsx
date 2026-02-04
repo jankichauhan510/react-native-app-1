@@ -30,6 +30,23 @@ const demos: DemoItem[] = [
   { title: "Platform Demo", path: "/screens/platform-demo" },
   { title: "View Website in App", path: "/screens/webview-demo" },
   { title: "Custom Modal Demo", path: "/screens/custom-modal-demo" },
+  { title: "Drawer Layout Android", path: "/screens/drawer-layout-android" },
+  { title: "Image Background", path: "/screens/image-background" },
+  { title: "Image Component", path: "/screens/image-component" },
+  { title: "Keyboard Avoiding View", path: "/screens/keyboard-avoiding" },
+  { title: "Ref in React Native", path: "/screens/ref-in-react-native" },
+  { title: "Refresh Control", path: "/screens/refresh-control" },
+  { title: "ScrollView", path: "/screens/scroll-view" },
+  { title: "Switch", path: "/screens/switch-scree" },
+  {
+    title: "Touchable Native Feedback Demo",
+    path: "/screens/touchable-native-feedback-demo",
+  },
+  {
+    title: "Touchable Without Feedback",
+    path: "/screens/touchable-without-feedback",
+  },
+  { title: "Virtualized List", path: "/screens/virtualized-list" },
 ];
 
 export default function NavigationInRNDemo() {
