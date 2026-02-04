@@ -23,9 +23,7 @@ export default function App() {
           ]}
           onPress={() => router.push("/screens/fetch-data")}
         >
-          <Text style={styles.buttonText}>
-            Fetch Multiple posts data from dummy data
-          </Text>
+          <Text style={styles.buttonText}>Get Multiple Posts (Dummy Data)</Text>
         </Pressable>
 
         <Pressable
