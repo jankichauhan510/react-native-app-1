@@ -1,4 +1,4 @@
-import RefINReactNative from "@/components/RefInReactNative/RefINReactNative";
+import ImageComponentDemo from "@/components/ImageComponentDemo/ImageComponentDemo";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -39,7 +39,9 @@ export default function App() {
         </Pressable>
       </View> */}
 
-      <RefINReactNative />
+      {/* <RefINReactNative /> */}
+
+      <ImageComponentDemo />
     </SafeAreaView>
   );
 }
