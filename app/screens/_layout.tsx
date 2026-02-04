@@ -39,6 +39,14 @@ export default function ScreensLayout() {
           options={{ title: "CRUD with JSON server", ...commonHeaderOptions }}
         />
 
+        <Stack.Screen
+          name="apis-demo"
+          options={{
+            title: "APIs Demo",
+            ...commonHeaderOptions,
+          }}
+        />
+
         <Stack.Screen name="button-demo" options={{ title: "Button Demo" }} />
         <Stack.Screen name="state-demo" options={{ title: "State Demo" }} />
         <Stack.Screen name="props-demo" options={{ title: "Props Demo" }} />

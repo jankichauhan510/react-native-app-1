@@ -35,6 +35,16 @@ export default function App() {
         >
           <Text style={styles.buttonText}>CRUD with JSON-server</Text>
         </Pressable>
+
+        <Pressable
+          style={({ pressed }) => [
+            styles.button,
+            pressed && styles.buttonPressed,
+          ]}
+          onPress={() => router.push("/screens/apis-demo")}
+        >
+          <Text style={styles.buttonText}>APIs Demo</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
