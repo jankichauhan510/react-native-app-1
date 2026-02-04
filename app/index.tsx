@@ -1,4 +1,4 @@
-import ImageBackgroundDemo from "@/components/ImageBackgroundDemo/ImageBackgroundDemo";
+import KeyboardAvoidingComponent from "@/components/KeyboardAvoidingComponentDemo/KeyboardAvoidingComponent";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -43,7 +43,9 @@ export default function App() {
 
       {/* <ImageComponentDemo /> */}
 
-      <ImageBackgroundDemo />
+      {/* <ImageBackgroundDemo /> */}
+
+      <KeyboardAvoidingComponent />
     </SafeAreaView>
   );
 }
