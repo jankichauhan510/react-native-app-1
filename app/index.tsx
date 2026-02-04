@@ -1,4 +1,4 @@
-import DrawerLayoutAndroidDemo from "@/components/DrawerLayoutAndroidDemo/DrawerLayoutAndroidDemo";
+import TouchableNativeFeedbackDemo from "@/components/TouchableNativeFeedbackAndroidComponentDemo/TouchableNativeFeedbackDemo";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -57,7 +57,9 @@ export default function App() {
 
       {/* <VirtualizedListDemo /> */}
 
-      <DrawerLayoutAndroidDemo />
+      {/* <DrawerLayoutAndroidDemo /> */}
+
+      <TouchableNativeFeedbackDemo />
     </SafeAreaView>
   );
 }
