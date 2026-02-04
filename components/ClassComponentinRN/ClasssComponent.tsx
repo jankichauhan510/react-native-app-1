@@ -24,7 +24,7 @@ class ClasssComponent extends Component<{}, State> {
 
   render(): ReactNode {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={{ fontSize: 30 }}>Class COmponent Demo</Text>
 
         {/* <Text>Name: {this.state.name}</Text>
@@ -46,6 +46,11 @@ class ClasssComponent extends Component<{}, State> {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    padding: 20,
+  },
   textInput: {
     fontSize: 15,
     color: "gray",

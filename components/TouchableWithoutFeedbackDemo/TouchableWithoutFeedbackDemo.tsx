@@ -10,7 +10,7 @@ export default function TouchableWithoutFeedbackDemo() {
   };
 
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <SafeAreaView
         style={{ flex: 1, justifyContent: "center", paddingHorizontal: 10 }}
       >

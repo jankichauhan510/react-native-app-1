@@ -10,7 +10,7 @@ type DemoItem = {
 const demos: DemoItem[] = [
   { title: "Button Demo", path: "/screens/button-demo" },
   { title: "State Demo", path: "/screens/state-demo" },
-  { title: "Props Demo", path: "/screens/props-demo" },
+  // { title: "Props Demo", path: "/screens/props-demo" },
   { title: "TextInput Demo", path: "/screens/textinput-demo" },
   { title: "Styling Demo", path: "/screens/styling-demo" },
   { title: "Form Demo", path: "/screens/form-demo" },
@@ -51,18 +51,29 @@ const demos: DemoItem[] = [
 
 export default function NavigationInRNDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 40 }}>
-      <View style={{ gap: 12 }}>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.buttonContainer}>
         {demos.map((item) => (
-          <Button
-            key={String(item.path)}
-            title={item.title}
-            onPress={() => router.push(item.path)}
-          />
+          <View key={String(item.path)} style={styles.buttonWrapper}>
+            <Button title={item.title} onPress={() => router.push(item.path)} />
+          </View>
         ))}
       </View>
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    padding: 24,
+    backgroundColor: "#ffffff",
+  },
+  buttonContainer: {
+    gap: 12,
+  },
+  buttonWrapper: {
+    backgroundColor: "#f5f5f5",
+    borderRadius: 8,
+    overflow: "hidden",
+  },
+});

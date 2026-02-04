@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 export default function TextInputDemo() {
   const [name, setName] = useState("");
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={{ fontSize: 30, fontWeight: "bold", margin: 10 }}>
         TextInputDemo
       </Text>
@@ -16,7 +16,7 @@ export default function TextInputDemo() {
         onChangeText={(text) => setName(text)}
       ></TextInput>
 
-      <Text style={{ color: "white" }}>You Entered: {name}</Text>
+      <Text>You Entered: {name}</Text>
 
       <Button
         title="clear input"
@@ -29,6 +29,11 @@ export default function TextInputDemo() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    padding: 20,
+  },
   textInput: {
     fontSize: 15,
     color: "gray",

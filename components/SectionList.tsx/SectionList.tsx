@@ -169,7 +169,7 @@ const groupedData: Section[] = Object.values(
 
 export default function SectionListComponent() {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "#ffffff" }}>
       <Text style={styles.title}>Section List in React Native</Text>
 
       <SectionList

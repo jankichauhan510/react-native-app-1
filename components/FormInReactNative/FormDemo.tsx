@@ -16,7 +16,7 @@ export default function FormDemo() {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={{ fontSize: 30, fontWeight: "bold", margin: 10 }}>
         Form Demo
       </Text>

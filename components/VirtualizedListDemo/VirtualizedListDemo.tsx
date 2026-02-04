@@ -1,10 +1,10 @@
 import React from "react";
 import {
-    StatusBar,
-    StyleSheet,
-    Text,
-    View,
-    VirtualizedList,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  VirtualizedList,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
@@ -32,7 +32,7 @@ const Item = ({ title }: ItemProps) => (
 
 export default function VirtualizedListDemo() {
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <SafeAreaView style={styles.container} edges={["top"]}>
         <VirtualizedList
           initialNumToRender={4}

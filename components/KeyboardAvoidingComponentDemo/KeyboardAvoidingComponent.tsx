@@ -33,11 +33,13 @@ const KeyboardAvoidingComponent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#f0f0f0",
   },
   inner: {
     padding: 24,
     flex: 1,
     justifyContent: "space-around",
+    backgroundColor: "white",
   },
   header: {
     fontSize: 36,

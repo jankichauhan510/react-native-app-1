@@ -38,7 +38,7 @@ export default function SwitchDemo() {
   const [isOn, setIsOn] = useState(false);
 
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider style={{ flex: 1, backgroundColor: "#fff" }}>
       <SafeAreaView style={styles.container}>
         {/* Bulb */}
         <View

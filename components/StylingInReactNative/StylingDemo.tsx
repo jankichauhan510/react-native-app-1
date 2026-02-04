@@ -4,7 +4,7 @@ import { textStyles } from "./Style";
 
 export default function StylingDemo() {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Style in ReactNative</Text>
 
       <Text style={{ fontSize: 30, color: "blue" }}>Inline Style</Text>
@@ -25,6 +25,11 @@ export default function StylingDemo() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    padding: 20,
+  },
   text: {
     fontSize: 20,
     fontWeight: "bold",

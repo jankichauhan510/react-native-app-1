@@ -52,8 +52,9 @@ export default function ListWithMap() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    marginBottom: 20,
+    flex: 1,
+    backgroundColor: "#ffffff",
+    padding: 20,
   },
   title: {
     fontSize: 22,

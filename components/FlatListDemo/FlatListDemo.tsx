@@ -38,7 +38,7 @@ const programmingLanguages = [
 
 export default function FlatListDemo() {
   return (
-    <View>
+    <View style={styles.container}>
       <Text
         style={{
           fontSize: 22,
@@ -133,6 +133,11 @@ export const getIconName = (language: any) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    padding: 20,
+  },
   itemContainer: {
     flexDirection: "row",
     alignItems: "center",

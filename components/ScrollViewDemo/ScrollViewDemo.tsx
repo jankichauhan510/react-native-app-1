@@ -1,14 +1,11 @@
 import React from "react";
-import { ScrollView, StatusBar, Text } from "react-native";
+import { ScrollView, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function ScrollViewDemo() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView
-        style={{ flex: 1, paddingTop: StatusBar.currentHeight }}
-        edges={["top"]}
-      >
+    <SafeAreaProvider style={{ flex: 1 }}>
+      <SafeAreaView edges={["top"]}>
         <ScrollView style={{ backgroundColor: "pink" }}>
           <Text style={{ fontSize: 42, padding: 12 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

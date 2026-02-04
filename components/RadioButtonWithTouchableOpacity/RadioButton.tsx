@@ -31,6 +31,8 @@ export default function RadioButton() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: "#ffffff", // white bg
     padding: 20,
   },
   title: {

@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   TouchableNativeFeedback,
+  View,
 } from "react-native";
 
 export default function TouchableNativeFeedbackDemo() {
@@ -24,22 +25,31 @@ export default function TouchableNativeFeedbackDemo() {
   };
 
   return (
-    <TouchableNativeFeedback
-      onPress={() => alert("Pressed!")}
-      onPressIn={onPressIn}
-      onPressOut={onPressOut}
-      background={TouchableNativeFeedback.Ripple("#fff", false)}
-    >
-      <Animated.View
-        style={[styles.button, { transform: [{ scale: scaleAnim }] }]}
+    <View style={styles.container}>
+      <TouchableNativeFeedback
+        onPress={() => alert("Pressed!")}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
+        background={TouchableNativeFeedback.Ripple("#fff", false)}
       >
-        <Text style={styles.text}>TouchableNativeFeedback Demo</Text>
-      </Animated.View>
-    </TouchableNativeFeedback>
+        <Animated.View
+          style={[styles.button, { transform: [{ scale: scaleAnim }] }]}
+        >
+          <Text style={styles.text}>TouchableNativeFeedback Demo</Text>
+        </Animated.View>
+      </TouchableNativeFeedback>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff", // white bg
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
   button: {
     backgroundColor: "#6200EE",
     padding: 16,

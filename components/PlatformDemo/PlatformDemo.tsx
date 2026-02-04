@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 
 export default function PlatformDemo() {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={{ fontSize: 30 }}>Platform Demo</Text>
 
       <Text style={styles.textStyle}>{Platform.OS}</Text>
@@ -14,6 +14,11 @@ export default function PlatformDemo() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    padding: 20,
+  },
   textStyle: {
     fontSize: 20,
   },

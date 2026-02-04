@@ -52,7 +52,14 @@ export default function ActivityIndicatorComponent() {
   }, []);
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#ffffff",
+      }}
+    >
       {loading ? (
         <ActivityIndicator size="large" color="green" />
       ) : (

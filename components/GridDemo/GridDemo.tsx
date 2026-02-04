@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 const programmingLanguages = [
   { id: "1", name: "JavaScript" },
@@ -36,36 +36,45 @@ const programmingLanguages = [
 
 export default function GridDemo() {
   return (
-    <View>
-      <Text
-        style={{
-          fontSize: 22,
-          fontWeight: "bold",
-          margin: 10,
-          textDecorationLine: "underline",
-        }}
-      >
-        Grid in React Native
-      </Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <Text
+          style={{
+            fontSize: 22,
+            fontWeight: "bold",
+            margin: 10,
+            textDecorationLine: "underline",
+          }}
+        >
+          Grid in React Native
+        </Text>
 
-      <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap", gap: 3 }}>
-        {programmingLanguages.map((item) => (
-          <Text key={item.id} style={styles.item}>
-            {item.name}
-          </Text>
-        ))}
+        <View
+          style={{ flex: 1, flexDirection: "row", flexWrap: "wrap", gap: 3 }}
+        >
+          {programmingLanguages.map((item) => (
+            <Text key={item.id} style={styles.item}>
+              {item.name}
+            </Text>
+          ))}
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f2f4f7", // light gray screen bg
+    padding: 20,
+  },
   item: {
     fontSize: 16,
     padding: 16,
     marginVertical: 4,
     marginHorizontal: 6,
-    backgroundColor: "#fff",
+    backgroundColor: "#ffffff", // pure white item
     borderRadius: 10,
   },
 });
