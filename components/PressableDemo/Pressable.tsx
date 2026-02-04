@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function LongPressMenu() {
+  const [actionMessage, setActionMessage] = useState("");
+
   const showOptions = () => {
     Alert.alert("Message Options", "Choose an action", [
-      { text: "Edit", onPress: () => console.log("Edit pressed") },
+      {
+        text: "Edit",
+        onPress: () => setActionMessage("Action selected: Edit"),
+      },
       {
         text: "Delete",
-        onPress: () => console.log("Delete pressed"),
+        onPress: () => setActionMessage("Action selected: Delete"),
         style: "destructive",
       },
-      { text: "Cancel", style: "cancel" },
+      {
+        text: "Cancel",
+        onPress: () => setActionMessage("Action selected: Cancel"),
+        style: "cancel",
+      },
     ]);
   };
 
@@ -19,13 +28,18 @@ export default function LongPressMenu() {
       <Text style={styles.title}>Pressable Demo</Text>
 
       <Pressable
-        onPress={() => console.log("Message tapped")}
+        onPress={() => setActionMessage("Message tapped")}
         onLongPress={showOptions}
         delayLongPress={700}
         style={({ pressed }) => [styles.messageBox, pressed && styles.pressed]}
       >
         <Text style={styles.messageText}>Hello 👋 Long press me</Text>
       </Pressable>
+
+      {/* Action result message */}
+      {actionMessage !== "" && (
+        <Text style={styles.actionText}>{actionMessage}</Text>
+      )}
     </View>
   );
 }
@@ -43,7 +57,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 10,
     textAlign: "center",
-    letterSpacing: 1,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
   },
@@ -58,5 +71,11 @@ const styles = StyleSheet.create({
   },
   messageText: {
     fontSize: 16,
+  },
+  actionText: {
+    marginTop: 20,
+    fontSize: 16,
+    color: "#333",
+    fontStyle: "italic",
   },
 });
