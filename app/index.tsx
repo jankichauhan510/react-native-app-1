@@ -1,4 +1,4 @@
-import SwitchDemo from "@/components/SwitchDemo/SwitchDemo";
+import TouchableWithoutFeedbackDemo from "@/components/TouchableWithoutFeedbackDemo/TouchableWithoutFeedbackDemo";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -51,7 +51,9 @@ export default function App() {
 
       {/* <ScrollViewDemo /> */}
 
-      <SwitchDemo />
+      {/* <SwitchDemo /> */}
+
+      <TouchableWithoutFeedbackDemo />
     </SafeAreaView>
   );
 }
