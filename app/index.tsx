@@ -1,4 +1,4 @@
-import VirtualizedListDemo from "@/components/VirtualizedListDemo/VirtualizedListDemo";
+import DrawerLayoutAndroidDemo from "@/components/DrawerLayoutAndroidDemo/DrawerLayoutAndroidDemo";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -55,7 +55,9 @@ export default function App() {
 
       {/* <TouchableWithoutFeedbackDemo /> */}
 
-      <VirtualizedListDemo />
+      {/* <VirtualizedListDemo /> */}
+
+      <DrawerLayoutAndroidDemo />
     </SafeAreaView>
   );
 }
