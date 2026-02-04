@@ -12,6 +12,10 @@ export default function CustomButton() {
         CustomButton style with TouchableHighlight
       </Text>
 
+      <Text style={{ textAlign: "center", marginTop: 5 }}>
+        Touch or Press button to view highlight effect
+      </Text>
+
       <TouchableHighlight onPress={handlePress} underlayColor="#ebe7e7">
         <View style={styles.button1}>
           <Text style={styles.buttonText}>Button</Text>
