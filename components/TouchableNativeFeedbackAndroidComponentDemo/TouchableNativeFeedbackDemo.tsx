@@ -26,6 +26,10 @@ export default function TouchableNativeFeedbackDemo() {
 
   return (
     <View style={styles.container}>
+      <Text style={{ marginBottom: 20 }}>
+        Tap the button below to see ripple + animation effect
+      </Text>
+
       <TouchableNativeFeedback
         onPress={() => alert("Pressed!")}
         onPressIn={onPressIn}
