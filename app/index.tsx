@@ -1,4 +1,4 @@
-import ScrollViewDemo from "@/components/ScrollViewDemo/ScrollViewDemo";
+import SwitchDemo from "@/components/SwitchDemo/SwitchDemo";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -49,7 +49,9 @@ export default function App() {
 
       {/* <RefreshControlDemo /> */}
 
-      <ScrollViewDemo />
+      {/* <ScrollViewDemo /> */}
+
+      <SwitchDemo />
     </SafeAreaView>
   );
 }
