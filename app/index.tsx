@@ -1,4 +1,4 @@
-import ImageComponentDemo from "@/components/ImageComponentDemo/ImageComponentDemo";
+import ImageBackgroundDemo from "@/components/ImageBackgroundDemo/ImageBackgroundDemo";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -41,7 +41,9 @@ export default function App() {
 
       {/* <RefINReactNative /> */}
 
-      <ImageComponentDemo />
+      {/* <ImageComponentDemo /> */}
+
+      <ImageBackgroundDemo />
     </SafeAreaView>
   );
 }
