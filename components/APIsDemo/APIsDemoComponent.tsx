@@ -1,10 +1,11 @@
 import { View } from "react-native";
-import AccessibilityInfoAPIDemo from "./AccessibilityInfoAPIDemo";
+import AlertDemo from "./AlertDemo";
 
 export default function APIsDemoComponent() {
   return (
     <View style={{ flex: 1, padding: 8 }}>
-      <AccessibilityInfoAPIDemo />
+      {/* <AccessibilityInfoAPIDemo /> */}
+      <AlertDemo />
     </View>
   );
 }
