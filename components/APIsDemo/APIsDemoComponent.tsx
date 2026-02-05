@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import UseColorSchemeHook from "./UseColorSchemeHook";
+import AppStateAPIDemo from "./AppStateAPIDemo";
 
 export default function APIsDemoComponent() {
   return (
@@ -10,7 +10,9 @@ export default function APIsDemoComponent() {
 
       {/* <AppearanceAPIDemo /> */}
 
-      <UseColorSchemeHook />
+      {/* <UseColorSchemeHook /> */}
+
+      <AppStateAPIDemo />
     </View>
   );
 }
