@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import TransformsAPIDemo from "./TransformsAPIDemo";
+import VibrationAPIDemo from "./VibrationAPIDemo";
 
 export default function APIsDemoComponent() {
   return (
@@ -24,7 +24,9 @@ export default function APIsDemoComponent() {
 
       {/* <ShareExample /> */}
 
-      <TransformsAPIDemo />
+      {/* <TransformsAPIDemo /> */}
+
+      <VibrationAPIDemo />
     </View>
   );
 }
