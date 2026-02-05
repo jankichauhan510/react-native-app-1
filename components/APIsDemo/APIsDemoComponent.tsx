@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import LayoutAnimationAPIDemo from "./LayoutAnimationAPIDemo";
+import LinkingAPIDemo from "./LinkingAPIDemo";
 
 export default function APIsDemoComponent() {
   return (
@@ -18,7 +18,9 @@ export default function APIsDemoComponent() {
 
       {/* <KeyboardAPIDemo /> */}
 
-      <LayoutAnimationAPIDemo />
+      {/* <LayoutAnimationAPIDemo /> */}
+
+      <LinkingAPIDemo />
     </View>
   );
 }
