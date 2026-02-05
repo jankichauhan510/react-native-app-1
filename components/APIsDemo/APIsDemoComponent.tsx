@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import LinkingAPIDemo from "./LinkingAPIDemo";
+import ShareExample from "./ShareAPIDemo";
 
 export default function APIsDemoComponent() {
   return (
@@ -20,7 +20,9 @@ export default function APIsDemoComponent() {
 
       {/* <LayoutAnimationAPIDemo /> */}
 
-      <LinkingAPIDemo />
+      {/* <LinkingAPIDemo /> */}
+
+      <ShareExample />
     </View>
   );
 }
