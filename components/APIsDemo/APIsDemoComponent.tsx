@@ -1,12 +1,10 @@
 import { View } from "react-native";
-import UseWindowDimensionsHookExample from "./useWindowDimensionsHookExample";
 
 export default function APIsDemoComponent() {
   return (
     <View style={{ flex: 1, padding: 8 }}>
       {/* <AccessibilityInfoAPIDemo /> */}
       {/* <AlertDemo /> */}
-      {/* <AnimatedDemo /> */}
 
       {/* <AppearanceAPIDemo /> */}
 
@@ -34,7 +32,7 @@ export default function APIsDemoComponent() {
 
       {/* <BackHandlerExample /> */}
 
-      <UseWindowDimensionsHookExample />
+      {/* <UseWindowDimensionsHookExample /> */}
     </View>
   );
 }
