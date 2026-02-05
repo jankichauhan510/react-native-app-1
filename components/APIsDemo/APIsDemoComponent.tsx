@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import AppearanceAPIDemo from "./AppearanceAPIDemo";
+import UseColorSchemeHook from "./UseColorSchemeHook";
 
 export default function APIsDemoComponent() {
   return (
@@ -8,7 +8,9 @@ export default function APIsDemoComponent() {
       {/* <AlertDemo /> */}
       {/* <AnimatedDemo /> */}
 
-      <AppearanceAPIDemo />
+      {/* <AppearanceAPIDemo /> */}
+
+      <UseColorSchemeHook />
     </View>
   );
 }
