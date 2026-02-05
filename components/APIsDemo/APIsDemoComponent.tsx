@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import ToastExampleApp from "./ToastExampleApp";
+import PermissionsAndroidDemo from "./PermissionsAndroidDemo";
 
 export default function APIsDemoComponent() {
   return (
@@ -28,7 +28,9 @@ export default function APIsDemoComponent() {
 
       {/* <VibrationAPIDemo /> */}
 
-      <ToastExampleApp />
+      {/* <ToastExampleApp /> */}
+
+      <PermissionsAndroidDemo />
     </View>
   );
 }
