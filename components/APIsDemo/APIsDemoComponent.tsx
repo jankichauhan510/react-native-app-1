@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import BackHandlerExample from "./BackHandlerExample";
+import UseWindowDimensionsHookExample from "./useWindowDimensionsHookExample";
 
 export default function APIsDemoComponent() {
   return (
@@ -32,7 +32,9 @@ export default function APIsDemoComponent() {
 
       {/* <PermissionsAndroidDemo /> */}
 
-      <BackHandlerExample />
+      {/* <BackHandlerExample /> */}
+
+      <UseWindowDimensionsHookExample />
     </View>
   );
 }
