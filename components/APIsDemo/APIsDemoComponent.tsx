@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import AppStateAPIDemo from "./AppStateAPIDemo";
+import EasingAPIDemo from "./EasingAPIDemo";
 
 export default function APIsDemoComponent() {
   return (
@@ -12,7 +12,9 @@ export default function APIsDemoComponent() {
 
       {/* <UseColorSchemeHook /> */}
 
-      <AppStateAPIDemo />
+      {/* <AppStateAPIDemo /> */}
+
+      <EasingAPIDemo />
     </View>
   );
 }
