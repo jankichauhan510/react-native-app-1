@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import PermissionsAndroidDemo from "./PermissionsAndroidDemo";
+import BackHandlerExample from "./BackHandlerExample";
 
 export default function APIsDemoComponent() {
   return (
@@ -30,7 +30,9 @@ export default function APIsDemoComponent() {
 
       {/* <ToastExampleApp /> */}
 
-      <PermissionsAndroidDemo />
+      {/* <PermissionsAndroidDemo /> */}
+
+      <BackHandlerExample />
     </View>
   );
 }
