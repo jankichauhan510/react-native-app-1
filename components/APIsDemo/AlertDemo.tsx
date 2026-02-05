@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, Button, StyleSheet, Text, View } from "react-native";
+import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 
 const handleSimplePress = () => {
   Alert.alert("Hello", "This is a simple alert");
@@ -55,24 +55,69 @@ const handleCustomAlert = () => {
 
 export default function AlertDemo() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Alert API Demo Component</Text>
-      <Button title="Show simple Alert" onPress={handleSimplePress} />
-      <Button
-        title="Show Alert with Buttons"
-        onPress={handleAlertWithButtons}
-      />
-      <Button
-        title="Show Alert with Custom Action"
-        onPress={handleAlertWithCustomAction}
-      />
-      <Button
-        title="Show Three Button Alert"
-        onPress={createThreeButtonAlert}
-      />
-      <Button title="Make own alert" onPress={handleCustomAlert} />
+    <View style={styles.container}>
+      <Text style={styles.title}>🚨 Alert API Demo</Text>
+
+      <Pressable style={styles.button} onPress={handleSimplePress}>
+        <Text style={styles.buttonText}>Show Simple Alert</Text>
+      </Pressable>
+
+      <Pressable style={styles.button} onPress={handleAlertWithButtons}>
+        <Text style={styles.buttonText}>Alert with Buttons</Text>
+      </Pressable>
+
+      <Pressable style={styles.button} onPress={handleAlertWithCustomAction}>
+        <Text style={styles.buttonText}>Custom Action Alert</Text>
+      </Pressable>
+
+      <Pressable style={styles.button} onPress={createThreeButtonAlert}>
+        <Text style={styles.buttonText}>Three Button Alert</Text>
+      </Pressable>
+
+      <Pressable
+        style={[styles.button, styles.outlineButton]}
+        onPress={handleCustomAlert}
+      >
+        <Text style={[styles.buttonText, styles.outlineText]}>
+          Make Your Own Alert
+        </Text>
+      </Pressable>
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 20,
+    backgroundColor: "#F9FAFB",
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: "700",
+    textAlign: "center",
+    marginBottom: 24,
+    color: "#111827",
+  },
+  button: {
+    backgroundColor: "#2563EB",
+    paddingVertical: 14,
+    borderRadius: 10,
+    marginBottom: 12,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  outlineButton: {
+    backgroundColor: "transparent",
+    borderWidth: 1.5,
+    borderColor: "#2563EB",
+  },
+  outlineText: {
+    color: "#2563EB",
+  },
+});
