@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import EasingAPIDemo from "./EasingAPIDemo";
+import KeyboardAPIDemo from "./KeyboardAPIDemo";
 
 export default function APIsDemoComponent() {
   return (
@@ -14,7 +14,9 @@ export default function APIsDemoComponent() {
 
       {/* <AppStateAPIDemo /> */}
 
-      <EasingAPIDemo />
+      {/* <EasingAPIDemo /> */}
+
+      <KeyboardAPIDemo />
     </View>
   );
 }
