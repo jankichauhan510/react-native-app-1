@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 // 🔹 Import demo components
+import AnimationDemo from "../AnimationDemo/AnimationDemo";
 import AccessibilityInfoAPIDemo from "./AccessibilityInfoAPIDemo";
 import AlertDemo from "./AlertDemo";
 import AppearanceAPIDemo from "./AppearanceAPIDemo";
@@ -125,6 +126,12 @@ export default function APIsDemoComponent() {
       title: "useWindowDimensions Hook",
       description: "Gets live screen width and height and updates on rotation.",
       component: <UseWindowDimensionsHookExample />,
+    },
+    Animations: {
+      title: "Animations API",
+      description:
+        "Built-in animation tools for creating smooth and interactive UIs.",
+      component: <AnimationDemo />,
     },
   };
 
